@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<settings>
+  <category label="Login">
+    <setting label="User:" type="text" id="user" default=""/>
+    <setting label="Password:" type="text"   id="password" option="hidden"  enable="!eq(-1,)" default=""/>
+    <setting type="sep"/>
+  </category>
+
+  <category label="Config">
+    <setting label="RSS Key" type="text" id="key" default="" option="hidden" visible="false"/>
+    <setting id="quality" type="select" values="ALL|DVDRip|HDTV|HDTVRip|DVD" label="Torrent quanlity: " default="ALL" />
+    <setting id="language" type="select" values="ALL|Russian|English" label="Torrent Language: " default="ALL" />
+  </category>
+</settings>
