@@ -17,10 +17,10 @@ def getkey():
   password = __addon__.getSetting("password")
 
   postData = {'username': user, 'password' : password, 'autologin' : '1'}
-  response = provider.POST("http://torrentsmd.com/takelogin.php", postData)
+  response = provider.POST("http://87.248.186.252/takelogin.php", postData)
   if response.data.find('user_box') > 0:
 
-    response = provider.GET("http://torrentsmd.com/browse.php")
+    response = provider.GET("http://87.248.186.252/browse.php")
     data = response.data.decode("utf-8")
     for key in re.findall(r'rss\.php\?key=[^\'"\s<>\[\]]+', data):
         notify("Successfully logged in", "User: " + user.encode("utf8") , 10000,  __addon__.getAddonInfo('icon'))
@@ -60,7 +60,7 @@ def search(query):
         title = query
         params["search_str"] = query.encode("utf8")
 
-    response = provider.GET("http://torrentsmd.com/rss.php", params)
+    response = provider.GET("http://87.248.186.252/rss.php", params)
     notify("Total files:" + str(len(re.findall(r'magnet:\?[^\'"\s<>\[\]]+', response.data))), title.encode("utf8") ,10000, __addon__.getAddonInfo('icon'))
     return provider.extract_magnets(response.data)
 
